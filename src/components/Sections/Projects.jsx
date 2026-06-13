@@ -6,8 +6,8 @@ const projects = [
     title: "developer-portfolio",
     description: "Software Developer Portfolio Template built with react.js and next.js bootstrap that helps you showcase your work and skills as a software developer.",
     hasGithub: true,
-    githubUrl: "https://github.com/selenophile-coder",
-    demoUrl: "https://your-demo-link.com"
+    githubUrl: "https://github.com/selenophile-coder/",
+    demoUrl: "https://sher-portfolio-kappa.vercel.app/"
   },
   {
     id: 2,
@@ -86,13 +86,23 @@ export default function Projects() {
               <p>{project.description}</p>
               <div className="button-group">
                 {project.hasGithub && (
-                  <button className="btn-github" onClick={() => window.open(project.githubUrl, '_blank')}>
+                  <a 
+                    href={project.githubUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-github"
+                  >
                     <i className="fa-brands fa-github"></i> GitHub
-                  </button>
+                  </a>
                 )}
-                <button className="btn-demo" onClick={() => window.open(project.demoUrl, '_blank')}>
+                <a 
+                  href={project.demoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-demo"
+                >
                   <i className="fa-solid fa-arrow-right"></i> DEMO
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}
