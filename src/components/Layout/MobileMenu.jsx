@@ -18,7 +18,7 @@ export default function MobileMenu({ isOpen, onClose, onNavClick }) {
           </button>
         </div>
         <div className="social-links-mobile">
-          <a href={socialLinks.x} target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+          <a href={socialLinks.x} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-x-twitter"></i></a>
           <a href={socialLinks.github} target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
           <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
         </div>

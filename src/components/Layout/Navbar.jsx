@@ -88,9 +88,9 @@ export default function Navbar() {
           <div className="social-links">
             <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
             <a href={socialLinks.github} target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
-           <a href={socialLinks.x} target="_blank" rel="noopener noreferrer">
-  <i className="fab fa-twitter"></i>
-</a>
+            <a href={socialLinks.x} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-x-twitter"></i>
+            </a>
           </div>
         </div>
       </header>

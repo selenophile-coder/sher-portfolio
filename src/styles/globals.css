@@ -105,21 +105,6 @@ body::before {
                       radial-gradient(1px 1px at 72% 18%, rgba(0,0,0,0.08), transparent);
 }
 
-.icon-circle.x {
-    border-color: #000000;
-    color: #000000;
-}
-
-.light-theme .icon-circle.x {
-    border-color: #000000;
-    color: #000000;
-}
-
-.icon-circle.x:hover {
-    background: #000000;
-    color: white;
-    transform: translateY(-5px) scale(1.1);
-}
 
 
 @keyframes starDrift {
@@ -564,6 +549,7 @@ section, [id] {
     background-clip: text;
     color: transparent;
     display: inline-block;
+    padding-right: 0.1em; /* Prevents text clipping of the last letter on mobile */
     animation: liveGradient 8s ease infinite;
 }
 
@@ -626,6 +612,11 @@ section, [id] {
 }
 
 .icon-circle.github {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+.icon-circle.x {
     border-color: var(--text-primary);
     color: var(--text-primary);
 }

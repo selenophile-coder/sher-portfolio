@@ -1,46 +1,87 @@
+import { motion } from 'framer-motion'
+
 const projects = [
   {
     id: 1,
     title: "developer-portfolio",
     description: "Software Developer Portfolio Template built with react.js and next.js bootstrap that helps you showcase your work and skills as a software developer.",
     hasGithub: true,
-    githubUrl: "https://github.com/yourusername/developer-portfolio",
+    githubUrl: "https://github.com/selenophile-coder",
     demoUrl: "https://your-demo-link.com"
   },
   {
     id: 2,
-    title: "Vantage CRM",
-    description: "All in one marketing, automation and CRM solution for business, which includes automate leads, followup, booking, payment, and more.",
+    title: "Self Study Management Library with Admin Control",
+    description: "Developed a full-stack library management system using React 18, Node.js, Express.js, MongoDB Atlas, and Mongoose ORM.",
     hasGithub: false,
-    demoUrl: "https://your-demo-link.com"
+    demoUrl: "https://achievers-library.vercel.app/"
   },
-  {
-    id: 3,
-    title: "O Mejor Oferta",
-    description: "O Mejor Oferta is a mobile marketplace for buying and selling items nearby, helping users find deals on things they want and make money from items they no longer need.",
-    hasGithub: false,
-    demoUrl: "https://your-demo-link.com"
-  },
-  {
-    id: 4,
-    title: "Hooligan Culture",
-    description: "A Ecommerce Platform, where shopping meets the future! With HandCash BitcoinSV integration, you can authenticate and purchase products with ease and confidence.",
-    hasGithub: false,
-    demoUrl: "https://your-demo-link.com"
-  }
+  // {
+  //   id: 3,
+  //   title: "C",
+  //   description: "O Mejor Oferta is a mobile marketplace for buying and selling items nearby, helping users find deals on things they want and make money from items they no longer need.",
+  //   hasGithub: false,
+  //   demoUrl: "https://your-demo-link.com"
+  // },
+  // {
+  //   id: 4,
+  //   title: "Hooligan Culture",
+  //   description: "A Ecommerce Platform, where shopping meets the future! With HandCash BitcoinSV integration, you can authenticate and purchase products with ease and confidence.",
+  //   hasGithub: false,
+  //   demoUrl: "https://your-demo-link.com"
+  // }
 ]
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 1, 0.5, 1]
+    }
+  }
+}
 
 export default function Projects() {
   return (
-    <section id="projects" className="projects-section animate-on-load">
+    <motion.section 
+      id="projects" 
+      className="projects-section"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="projects-container">
         <div className="projects-header">
           <div className="projects-icon-circle"><i className="fa-solid fa-laptop-code"></i></div>
           <h2>Featured Projects</h2>
         </div>
-        <div className="projects-grid">
+        <motion.div 
+          className="projects-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
           {projects.map((project) => (
-            <div key={project.id} className="project-card">
+            <motion.div 
+              key={project.id} 
+              className="project-card"
+              variants={cardVariants}
+            >
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <div className="button-group">
@@ -53,10 +94,10 @@ export default function Projects() {
                   <i className="fa-solid fa-arrow-right"></i> DEMO
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

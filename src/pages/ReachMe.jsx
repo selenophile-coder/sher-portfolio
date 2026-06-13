@@ -1,7 +1,31 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { useFormSubmit } from '../hooks/useFormSubmit'
 import { WEB3FORMS_KEY } from '../utils/constants'
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 1, 0.5, 1]
+    }
+  }
+}
 
 export default function ReachMe() {
   const navigate = useNavigate()
@@ -58,12 +82,17 @@ export default function ReachMe() {
   }
 
   return (
-    <div className="container-reach">
+    <motion.div 
+      className="container-reach"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="reach-header">
         <div className="logo-mini">Sher<span style={{ fontWeight: 300 }}>.</span>reach</div>
       </div>
 
-      <div className="contact-intro">
+      <motion.div className="contact-intro" variants={itemVariants}>
         <div className="badge"><i className="fas fa-comment-dots"></i> • Let's connect</div>
         <h1>Reach Me</h1>
         <p>Whether you have a project in mind, a collaboration proposal, or just want to say hello — I'm one message away. Let's craft something extraordinary.</p>
@@ -71,9 +100,9 @@ export default function ReachMe() {
           <span className="jp-text">" 一瞬一瞬を大切に "</span>
           <span className="en-meaning">— "Cherish every single moment." (Isshun isshun o taisetsu ni)</span>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="reach-grid">
+      <motion.div className="reach-grid" variants={itemVariants}>
         <div className="form-card">
           <div className="form-title">
             <i className="fas fa-pen-fancy"></i> 
@@ -117,13 +146,13 @@ export default function ReachMe() {
             <i className="fas fa-mug-hot"></i> Let's chat over coffee (virtual ☕)
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="back-footer">
+      <motion.div className="back-footer" variants={itemVariants}>
         <button className="btn-back-footer" onClick={() => navigate('/')}>
           <i className="fas fa-arrow-circle-left"></i> Return to main page
         </button>
-      </div>
+      </motion.div>
 
       {toast.show && (
         <div className="toast-msg" style={{ display: 'flex' }}>
@@ -131,6 +160,6 @@ export default function ReachMe() {
           {toast.message}
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }

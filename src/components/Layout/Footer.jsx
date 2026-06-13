@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { socialLinks } from '../../utils/socialLinks'
 import { RESUME_LINK } from '../../utils/constants'
 
@@ -19,7 +20,13 @@ export default function Footer() {
   }
 
   return (
-    <footer className="new-footer-section animate-on-load">
+    <motion.footer 
+      className="new-footer-section"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="footer-hero">
         <div className="footer-hero-content">
           <div className="title-row">
@@ -49,13 +56,13 @@ export default function Footer() {
             <a href={`mailto:${socialLinks.email}`} className="icon-circle email"><i className="fas fa-envelope"></i></a>
             <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="icon-circle linkedin"><i className="fab fa-linkedin-in"></i></a>
             <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="icon-circle github"><i className="fab fa-github"></i></a>
-            <a href={socialLinks.x} target="_blank" rel="noopener noreferrer" className="icon-circle x"><i className="fab fa-twitter"></i></a>
+            <a href={socialLinks.x} target="_blank" rel="noopener noreferrer" className="icon-circle x"><i className="fa-brands fa-x-twitter"></i></a>
           </div>
         </div>
       </div>
       <div className="footer-divider">
         <div className="copyright">© 2026 SHER MOHAMMAD. ALL RIGHTS RESERVED.</div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
