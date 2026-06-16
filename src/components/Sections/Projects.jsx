@@ -12,17 +12,17 @@ const projects = [
   {
     id: 2,
     title: "Self Study Management Library with Admin Control",
-    description: "Developed a full-stack library management system using React 18, Node.js, Express.js, MongoDB Atlas, and Mongoose ORM.",
+    description: "Developed a full-stack library management system using React 18, Node.js, Express.js, MongoDB Atlas, and Mongoose ORM. Achievers Library is a meticulously designed virtual environment crafted to foster deep work, intellectual focus, and academic excellence. It transcends the typical study space by offering a unique hybrid experience that combines the timeless gravitas of a traditional university hall with the sleek, seamless efficiency of a modern digital workstation.",
     hasGithub: false,
     demoUrl: "https://achievers-library.vercel.app/"
   },
-  // {
-  //   id: 3,
-  //   title: "C",
-  //   description: "O Mejor Oferta is a mobile marketplace for buying and selling items nearby, helping users find deals on things they want and make money from items they no longer need.",
-  //   hasGithub: false,
-  //   demoUrl: "https://your-demo-link.com"
-  // },
+  {
+    id: 3,
+   title: "WedCoholic — Luxury Wedding Wear E-Commerce Platform",
+    description: "Built a full-stack luxury wedding wear e-commerce platform using React 18, Node.js, Express.js, MongoDB Atlas, and Mongoose ORM. Implemented secure authentication, curated shopping by wedding ceremonies, dual-step admin security, and transactional emails via Gmail SMTP and Resend API. Optimized performance with motion preloaders and deployed on Vercel.",
+    hasGithub: false,
+    demoUrl: "https://wedoholic.vercel.app/"
+  },
   // {
   //   id: 4,
   //   title: "Hooligan Culture",
