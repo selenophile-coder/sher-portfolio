@@ -93,7 +93,7 @@ export default function ReachMe() {
       </div>
 
       <motion.div className="contact-intro" variants={itemVariants}>
-        <div className="badge"><i className="fas fa-comment-dots"></i> • Let's connect</div>
+        <div className="badge"> Let's connect</div>
         <h1>Reach Me</h1>
         <p>Whether you have a project in mind, a collaboration proposal, or just want to say hello — I'm one message away. Let's craft something extraordinary.</p>
         <div className="japanese-quote">
@@ -105,22 +105,22 @@ export default function ReachMe() {
       <motion.div className="reach-grid" variants={itemVariants}>
         <div className="form-card">
           <div className="form-title">
-            <i className="fas fa-pen-fancy"></i> 
+             
             <span>Send a message</span>
           </div>
-          <div className="form-sub">✨ Hey Buddy! Let's create something amazing together.</div>
+          <div className="form-sub"> Hey Buddy! Let's create something amazing together.</div>
           
           <form onSubmit={handleSubmit}>
             <div className="input-group">
-              <i className="fas fa-user-astronaut"></i>
+              <i className="far fa-user"></i>
               <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Full name" required />
             </div>
             <div className="input-group">
-              <i className="fas fa-envelope"></i>
+              <i className="far fa-envelope"></i>
               <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email address" required />
             </div>
             <div className="input-group">
-              <i className="fas fa-comment"></i>
+              <i className="far fa-comment-dots"></i>
               <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell me about your idea, project, or just say hi..." required></textarea>
             </div>
             <button type="submit" className="send-btn" disabled={loading}>
@@ -133,7 +133,7 @@ export default function ReachMe() {
             <i className="fas fa-circle"></i> Available for freelance & full-time opportunities
           </div>
           <div className="detail-item">
-            <div className="detail-icon"><i className="fas fa-map-pin"></i></div>
+            <div className="detail-icon"><i className="fas fa-location-dot"></i></div>
             <div className="detail-text">
               <h4>Location</h4>
               <p>Delhi, India — Remote Worldwide</p>
@@ -143,7 +143,7 @@ export default function ReachMe() {
             <h3><i className="fas fa-share-alt"></i> Connect everywhere</h3>
           </div>
           <div className="extra-note">
-            <i className="fas fa-mug-hot"></i> Let's chat over coffee (virtual ☕)
+             Let's chat over coffee (virtual ☕)
           </div>
         </div>
       </motion.div>
